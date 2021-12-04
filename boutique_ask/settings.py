@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'allauth', # add from dajngo-allauth installation
     'allauth.account',# add from dajngo-allauth installation
     'allauth.socialaccount', # add from dajngo-allauth installation
+    'home',
 ]
 
 MIDDLEWARE = [
@@ -58,7 +59,10 @@ ROOT_URLCONF = 'boutique_ask.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            os.path.join(BASE_DIR,'templates'),
+            os.path.join(BASE_DIR,'templates','allauth'),
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
